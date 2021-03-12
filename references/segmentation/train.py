@@ -11,6 +11,7 @@ from coco_utils import get_coco
 import presets
 import utils
 
+import mastr1325
 
 def get_dataset(dir_path, name, image_set, transform):
     def sbd(*args, **kwargs):
@@ -18,7 +19,8 @@ def get_dataset(dir_path, name, image_set, transform):
     paths = {
         "voc": (dir_path, torchvision.datasets.VOCSegmentation, 21),
         "voc_aug": (dir_path, sbd, 21),
-        "coco": (dir_path, get_coco, 21)
+        "coco": (dir_path, get_coco, 21),
+        "mastr1325": (dir_path, mastr1325.MaSTr1325Dataset, 4)
     }
     p, ds_fn, num_classes = paths[name]
 
