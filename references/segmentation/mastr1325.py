@@ -48,6 +48,13 @@ class MaSTr1325Dataset(VisionDataset):
     def __getitem__(self, index: int) -> Tuple[Any, Any]:
         img = Image.open(self.images[index]).convert('RGB')
         target = Image.open(self.masks[index])
+        
+        
+#         Obstacles and environment = 0 (value zero)
+#         Water = 1 (value one)
+#         Sky = 2 (value two)
+#         Ignore region / unknown category = 4 (value four)
+
 
         if self.transforms is not None:
             img, target = self.transforms(img, target)
