@@ -20,7 +20,7 @@ def get_dataset(dir_path, name, image_set, transform):
         "voc": (dir_path, torchvision.datasets.VOCSegmentation, 21),
         "voc_aug": (dir_path, sbd, 21),
         "coco": (dir_path, get_coco, 21),
-        "mastr1325": (dir_path, mastr1325.MaSTr1325Dataset, 4)
+        "mastr1325": (dir_path, mastr1325.MaSTr1325Dataset, 5)
     }
     p, ds_fn, num_classes = paths[name]
 
