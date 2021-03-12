@@ -48,7 +48,8 @@ class MaSTr1325Dataset(VisionDataset):
     def __getitem__(self, index: int) -> Tuple[Any, Any]:
         img = Image.open(self.images[index]).convert('RGB')
         target = Image.open(self.masks[index])
-        target = np.where(target==4, 3, target)        
+        target = np.where(target==4, 3, target)
+        target = Image.fromarray(target)
         
 #         Obstacles and environment = 0 (value zero)
 #         Water = 1 (value one)
