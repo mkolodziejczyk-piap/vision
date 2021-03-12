@@ -44,6 +44,7 @@ class MaSTr1325Dataset(VisionDataset):
 
         assert (len(self.images) == len(self.masks))
 
+    # https://github.com/pytorch/vision/blob/11268ca79e9a54b12fdafdde558e809698f09b05/torchvision/datasets/voc.py#L153-L167
     def __getitem__(self, index: int) -> Tuple[Any, Any]:
         img = Image.open(self.images[index]).convert('RGB')
         target = Image.open(self.masks[index])
